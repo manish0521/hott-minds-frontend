@@ -12,7 +12,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: absoluteUrl(PAGES.home.path),
       lastModified,
       images: [
-        ...PRODUCTS.map((product) => absoluteUrl(product.image)),
+        ...PRODUCTS.flatMap((product) =>
+          (product.images ?? [{ src: product.image }]).map((image) => absoluteUrl(image.src))
+        ),
         absoluteUrl("/images/official-price-sheet.jpg"),
       ],
     },
@@ -21,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       images: [
         absoluteUrl("/images/hott-meals-rum-bundt-cake.jpg"),
-        absoluteUrl("/images/hott-meals-catering-menu.jpg"),
+        absoluteUrl("/images/hott-meals-enhanced-flyer.png"),
       ],
     },
     {

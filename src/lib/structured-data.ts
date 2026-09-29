@@ -91,7 +91,9 @@ function productNode(product: Product): JsonLdNode {
     "@id": absoluteUrl(`/#product-${product.id}`),
     name: product.name,
     description: product.description,
-    image: absoluteUrl(product.image),
+    image: product.images
+      ? product.images.map((image) => absoluteUrl(image.src))
+      : absoluteUrl(product.image),
     sku: product.id,
     category: product.categoryLabel,
     brand: { "@type": "Brand", name: COMPANY.divisions.apparel },

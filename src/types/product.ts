@@ -10,6 +10,7 @@ export interface Product {
   price: string;
   youthPrice?: string;
   image: string;
+  images?: { src: string; label: string }[];
   badge?: string;
   description: string;
   specs: string[];

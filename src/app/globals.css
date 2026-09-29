@@ -5,9 +5,6 @@
   --ink-black: #141210;
   --blaze-orange: #ff5c1a;
   --bone: #faf6ef;
-  --deep-teal: #1c4e4c;
-  --clay: #8c2f1b;
-  --sand: #f0e9dd;
 
   /* Semantic tokens */
   --background: var(--bone);
@@ -25,9 +22,6 @@
   --color-ink: var(--ink-black);
   --color-blaze: var(--blaze-orange);
   --color-bone: var(--bone);
-  --color-sand: var(--sand);
-  --color-clay: var(--clay);
-  --color-deep-teal: var(--deep-teal);
 
   --font-sans: var(--font-inter), system-ui, sans-serif;
   --font-display: var(--font-anton), Impact, sans-serif;

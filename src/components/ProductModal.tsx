@@ -18,6 +18,7 @@ interface ProductModalProps {
 
 export default function ProductModal({ product, open, onOpenChange }: ProductModalProps) {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [imageIndex, setImageIndex] = useState(0);
   const isLightboxOpenRef = useRef(false);
   useEffect(() => {
     isLightboxOpenRef.current = isLightboxOpen;
@@ -44,6 +45,8 @@ export default function ProductModal({ product, open, onOpenChange }: ProductMod
   };
 
   if (!product) return null;
+  const images = product.images ?? [{ src: product.image, label: "Product" }];
+  const activeImage = images[imageIndex] ?? images[0];
 
   return (
     <>
@@ -93,25 +96,43 @@ export default function ProductModal({ product, open, onOpenChange }: ProductMod
 
               <div className="grid grid-cols-1 items-center gap-6 sm:grid-cols-2">
                 {/* Product Media - Click to Open Lightbox */}
-                <div
-                  onClick={() => setIsLightboxOpen(true)}
-                  className="group relative aspect-square cursor-zoom-in overflow-hidden rounded-2xl border border-[#2e2a27] bg-[#1e1c1a] transition-colors hover:border-[#ff5c1a]/60"
-                  title="Click to inspect image in lightbox"
-                >
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    loading="eager"
-                    sizes="(max-width: 640px) 100vw, 350px"
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/25 opacity-0 transition-opacity group-hover:opacity-100">
-                    <span className="flex items-center gap-1.5 rounded-full border border-white/20 bg-[#141210] px-3.5 py-1.5 text-xs font-bold text-white">
-                      <ZoomIn className="h-4 w-4 text-[#ff5c1a]" />
-                      <span>Click to Zoom</span>
+                <div className="space-y-3">
+                  <button
+                    type="button"
+                    onClick={() => setIsLightboxOpen(true)}
+                    className="group relative aspect-square w-full cursor-zoom-in overflow-hidden rounded-2xl border border-[#2e2a27] bg-[#1e1c1a] transition-colors hover:border-[#ff5c1a]/60"
+                    title="Click to inspect image in lightbox"
+                  >
+                    <Image
+                      src={activeImage.src}
+                      alt={`${product.name} — ${activeImage.label}`}
+                      fill
+                      loading="eager"
+                      sizes="(max-width: 640px) 100vw, 350px"
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <span className="absolute inset-0 flex items-center justify-center bg-black/25 opacity-0 transition-opacity group-hover:opacity-100">
+                      <span className="flex items-center gap-1.5 rounded-full border border-white/20 bg-[#141210] px-3.5 py-1.5 text-xs font-bold text-white">
+                        <ZoomIn className="h-4 w-4 text-[#ff5c1a]" />
+                        <span>Click to Zoom</span>
+                      </span>
                     </span>
-                  </div>
+                  </button>
+                  {images.length > 1 && (
+                    <div className="flex gap-2" aria-label="Product views">
+                      {images.map((image, index) => (
+                        <button
+                          key={image.src}
+                          type="button"
+                          aria-pressed={imageIndex === index}
+                          onClick={() => setImageIndex(index)}
+                          className={`flex-1 rounded-lg border px-3 py-2 text-sm font-semibold transition-colors ${imageIndex === index ? "border-[#ff5c1a] bg-[#ff5c1a]/15 text-[#ff5c1a]" : "border-white/20 text-white hover:border-white/50"}`}
+                        >
+                          {image.label}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 {/* Product Information */}
@@ -171,7 +192,12 @@ export default function ProductModal({ product, open, onOpenChange }: ProductMod
       <Lightbox
         open={isLightboxOpen}
         close={handleCloseLightbox}
-        slides={[{ src: product.image, alt: product.name }]}
+        slides={images.map((image) => ({
+          src: image.src,
+          alt: `${product.name} — ${image.label}`,
+        }))}
+        index={imageIndex}
+        on={{ view: ({ index }) => setImageIndex(index) }}
         plugins={[Zoom]}
         zoom={{
           maxZoomPixelRatio: 3,
@@ -185,10 +211,14 @@ export default function ProductModal({ product, open, onOpenChange }: ProductMod
           scrollToZoom: true,
         }}
         controller={{ closeOnBackdropClick: true }}
-        render={{
-          buttonPrev: () => null,
-          buttonNext: () => null,
-        }}
+        render={
+          images.length === 1
+            ? {
+                buttonPrev: () => null,
+                buttonNext: () => null,
+              }
+            : undefined
+        }
         styles={{
           root: { "--yarl__color_backdrop": "rgba(0, 0, 0, 0.92)" },
         }}

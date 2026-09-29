@@ -185,17 +185,17 @@ export default function ServicesPage() {
 
               {/* Right Column: Visual Flyer Card - matches Home Page official price sheet card */}
               <div className="space-y-4 lg:col-span-5">
-                <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-[#2e2a27] bg-[#1e1c1a]">
+                <div className="relative aspect-square overflow-hidden rounded-2xl border border-[#2e2a27] bg-white">
                   <Image
-                    src="/images/hott-meals-catering-menu.jpg"
-                    alt="Hott Meals Instantly cake menu. Orders over $200 get a free cake, excluding infusion cakes. Text 773-417-9901 to order."
+                    src="/images/hott-meals-enhanced-flyer.png"
+                    alt="Hott Meals Instantly flyer: pound cakes, infused cakes, food and cookies. Orders over $200 get a free cake, excluding infusion cakes. Contact Ms. Tasha at 773-417-9901 to order."
                     fill
                     sizes="(max-width: 1024px) 100vw, 450px"
                     className="object-contain"
                   />
                 </div>
                 <p className="text-center text-xs text-[#faf6ef]/60">
-                  Hott Meals Instantly (H.M.I) cake menu &amp; ordering details.
+                  Hott Meals Instantly (H.M.I) flyer &amp; ordering details.
                 </p>
               </div>
             </div>

@@ -11,6 +11,6 @@ export default function Image() {
     title: "Start your order.",
     accent: "Text or call.",
     tagline: `Text or call ${COMPANY.contacts.phone.display} — we reply within 24 hours.`,
-    image: "/images/tshirt-reunion.jpg",
+    image: "/images/hott-minds-family-reunion.png",
   });
 }

@@ -17,6 +17,7 @@ export function QuickViewProvider({ children }: { children: ReactNode }) {
     <QuickViewContext value={setSelectedProduct}>
       {children}
       <ProductModal
+        key={selectedProduct?.id ?? "closed"}
         product={selectedProduct}
         open={Boolean(selectedProduct)}
         onOpenChange={(open) => {
