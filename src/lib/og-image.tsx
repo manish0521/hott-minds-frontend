@@ -9,7 +9,7 @@ interface OgImageProps {
   /** Rendered in brand orange after the title */
   accent: string;
   tagline: string;
-  /** Photo under /public, e.g. "/images/tshirt-flame.jpg" */
+  /** Photo under /public, e.g. "/images/hott-minds-flame-tee.jpg" */
   image: string;
 }
 

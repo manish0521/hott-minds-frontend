@@ -19,7 +19,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: absoluteUrl(PAGES.services.path),
       lastModified,
-      images: [absoluteUrl("/images/infusion-cake.jpg"), absoluteUrl("/images/catering-flyer.jpg")],
+      images: [
+        absoluteUrl("/images/hott-meals-rum-bundt-cake.jpg"),
+        absoluteUrl("/images/hott-meals-catering-menu.jpg"),
+      ],
     },
     {
       url: absoluteUrl(PAGES.contact.path),

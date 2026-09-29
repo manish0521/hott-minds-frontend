@@ -54,8 +54,8 @@ export default function ServicesPage() {
           { label: "Guests per pan", value: "10-25" },
         ]}
         showcase={{
-          image: "/images/infusion-cake.jpg",
-          alt: "H.M.I Gourmet Caribbean Rum Infusion Cake",
+          image: "/images/hott-meals-rum-bundt-cake.jpg",
+          alt: "Golden rum-glazed bundt cake with pecan crumble and a slice showing its tender crumb",
           title: "Rum Infusion Cakes",
           subtitle: "Hennessy & Aged Rum Reduction · Bundt Pans",
           action: {
@@ -187,15 +187,15 @@ export default function ServicesPage() {
               <div className="space-y-4 lg:col-span-5">
                 <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-[#2e2a27] bg-[#1e1c1a]">
                   <Image
-                    src="/images/catering-flyer.jpg"
-                    alt="Hott Meals Instantly (H.M.I) Catering Plate Flyer"
+                    src="/images/hott-meals-catering-menu.jpg"
+                    alt="Hott Meals Instantly cake menu. Orders over $200 get a free cake, excluding infusion cakes. Text 773-417-9901 to order."
                     fill
                     sizes="(max-width: 1024px) 100vw, 450px"
                     className="object-contain"
                   />
                 </div>
                 <p className="text-center text-xs text-[#faf6ef]/60">
-                  Original Hott Meals Instantly (H.M.I) Plate Flyer.
+                  Hott Meals Instantly (H.M.I) cake menu &amp; ordering details.
                 </p>
               </div>
             </div>

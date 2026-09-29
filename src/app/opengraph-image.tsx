@@ -11,6 +11,6 @@ export default function Image() {
     title: "Your art,",
     accent: "Pressed perfect.",
     tagline: `Custom tees, hoodies, caps & mugs. No minimums. Adult tees ${COMPANY.pricing.adultTee}.`,
-    image: "/images/tshirt-flame.jpg",
+    image: "/images/hott-minds-flame-tee.jpg",
   });
 }

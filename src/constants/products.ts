@@ -9,7 +9,7 @@ export const PRODUCTS: Product[] = [
     categoryLabel: "Shirts",
     price: COMPANY.pricing.adultTee,
     youthPrice: COMPANY.pricing.youthTee,
-    image: "/images/tshirt-flame.jpg",
+    image: "/images/hott-minds-flame-tee.jpg",
     badge: "Best Seller",
     description:
       "Heavyweight 100% ring-spun cotton with ultra-crisp DTF flame graphics. Breathable, vibrant, and soft to the touch.",
@@ -26,7 +26,7 @@ export const PRODUCTS: Product[] = [
     category: "hoodies",
     categoryLabel: "Hoodies",
     price: "$42.00",
-    image: "/images/hoodie-urban.jpg",
+    image: "/images/hott-minds-flame-hoodie.jpg",
     badge: "Streetwear",
     description:
       "Ultra-thick 450 GSM fleece hoodie with double-needle stitching, metal eyelets, and premium full-color chest transfer.",

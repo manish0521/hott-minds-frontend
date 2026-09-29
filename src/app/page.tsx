@@ -55,7 +55,7 @@ export default function Home() {
             { label: "Wash tested", value: "60+" },
           ]}
           showcase={{
-            image: "/images/tshirt-flame.jpg",
+            image: "/images/hott-minds-flame-tee.jpg",
             alt: "Designs by Hott Minds Signature Flame T-Shirt",
             title: "Signature Flame T-Shirt",
             subtitle: `${COMPANY.pricing.adultTee} Adult · ${COMPANY.pricing.youthTee} Youth`,

@@ -11,6 +11,6 @@ export default function Image() {
     title: "We cook,",
     accent: "You celebrate.",
     tagline: `Party pans, pound cakes & rum cakes. Free cake on ${COMPANY.pricing.cateringCakePromoThreshold}+ orders.`,
-    image: "/images/infusion-cake.jpg",
+    image: "/images/hott-meals-rum-bundt-cake.jpg",
   });
 }

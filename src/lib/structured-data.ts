@@ -130,7 +130,10 @@ export function siteJsonLd(): JsonLdNode {
         width: 247,
         height: 256,
       },
-      image: [absoluteUrl("/images/tshirt-flame.jpg"), absoluteUrl("/images/infusion-cake.jpg")],
+      image: [
+        absoluteUrl("/images/hott-minds-flame-tee.jpg"),
+        absoluteUrl("/images/hott-meals-rum-bundt-cake.jpg"),
+      ],
       telephone: phone.international,
       email: email.display,
       address: ADDRESS,
@@ -203,7 +206,7 @@ export function siteJsonLd(): JsonLdNode {
 }
 
 export function homeJsonLd(): JsonLdNode {
-  return graph(webPageNode(PAGES.home, { image: "/images/tshirt-flame.jpg" }), {
+  return graph(webPageNode(PAGES.home, { image: "/images/hott-minds-flame-tee.jpg" }), {
     "@type": "Service",
     "@id": absoluteUrl("/#dtf-printing"),
     name: "Custom DTF apparel printing",
@@ -221,7 +224,7 @@ export function homeJsonLd(): JsonLdNode {
 
 export function servicesJsonLd(): JsonLdNode {
   return graph(
-    webPageNode(PAGES.services, { image: "/images/infusion-cake.jpg" }),
+    webPageNode(PAGES.services, { image: "/images/hott-meals-rum-bundt-cake.jpg" }),
     breadcrumbNode(PAGES.services),
     {
       "@type": "Service",
